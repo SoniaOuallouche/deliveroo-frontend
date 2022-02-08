@@ -7,6 +7,7 @@ import Category from "./components/Category";
 function App() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [basket, setBasket] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,8 +24,6 @@ function App() {
     };
     fetchData();
   }, []);
-
-  const handleClick = (index, action) => {};
 
   return isLoading ? (
     <div>En cours de chargement...</div>

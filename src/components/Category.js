@@ -1,4 +1,4 @@
-const Category = ({ category }) => {
+const Category = ({ category, basket, setBasket }) => {
   return (
     <div>
       <h2>{category.name}</h2>
@@ -7,7 +7,10 @@ const Category = ({ category }) => {
         return (
           <div
             onClick={() => {
-              console.log("J'ai cliqué sur le produit ====> ", meal);
+              //console.log("J'ai cliqué sur le produit ====> ", meal);
+              const newBasket = [...basket];
+              newBasket.push(category.meals.title);
+              setBasket(newBasket);
             }}
             className="card"
           >
